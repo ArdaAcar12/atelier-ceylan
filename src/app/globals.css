@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8F8F8;
+  --foreground: #1A1A1A;
+  --primary: #0F172A;
+  --border: #E5E5E5;
+  --muted: #6B7280;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.btn-primary {
+  @apply inline-block px-6 py-3 rounded-xl bg-primary text-white font-medium text-sm tracking-wider transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 active:scale-95;
+}
+
+.btn-secondary {
+  @apply inline-block px-6 py-3 rounded-xl bg-background text-foreground font-medium text-sm tracking-wider border border-border transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95;
+}
